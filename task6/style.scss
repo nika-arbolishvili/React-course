@@ -1,0 +1,391 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.animation-banner-container {
+    width: 500px;
+    height: 1000px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('img/bg_frame1.jpg');
+    animation: firstFrameChange 0.7s forwards 6s, 
+    secondFrameChange 0.7s forwards 8.6s, 
+    thirdframe 0.7s forwards 10s;
+    z-index: 1;
+
+
+@keyframes firstFrameChange {
+    0% {
+        background-image: url('img/bg_frame1.jpg');
+    }
+    100% {
+        background-image: url('img/bg_frame3.jpg');
+    }
+}
+
+@keyframes secondFrameChange {
+    0% {
+        background-image: url('img/bg_frame3.jpg');
+    }
+    100% {
+        background-image: url('img/bg_frame4.jpg');
+    }
+}
+
+@keyframes thirdframe {
+    0% {
+        background-image: url('img/bg_frame4.jpg');
+    }
+    100% {
+        background-image: url('img/bg_frame5.jpg');
+    }
+}
+
+
+.banner-items {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+
+    .top-text {
+        width: 100%;
+        height: 220px;
+        background-repeat: no-repeat;
+        background-image: url('img/txt_headline_890.png');
+        position: absolute;
+        top: 19%;
+        transform: scale(0);
+        animation: topLineAnimation 2s forwards, topLineFadeOutAnimation 0.2s forwards 3s;
+
+        @keyframes topLineAnimation {
+            0% {
+                transform: scale(0);
+                top: 19%;
+            }
+            20% {
+                transform: scale(0.1);
+                top: 18%;
+                left: -7%;
+            }
+            40% {
+                transform: scale(1);
+                top: 10%;
+                left: 0;
+            }
+            100% {
+                transform: scale(1);
+                top: 10%;
+                left: 0;
+            }
+        }
+
+        @keyframes topLineFadeOutAnimation {
+            0% {
+                transform: scale(1);
+                top: 10%;
+                left: 0;
+            }
+            80% {
+                transform: scale(0.2);
+                top: 17%;
+                left: -7%;
+            }
+            100% {
+                transform: scale(0);
+                top: 19%;
+            }
+        }
+    }
+    .menu {
+        z-index: 100;
+        &.end{
+            left: 70%;
+            animation: endmenu 1.5s forwards;
+
+            @keyframes endmenu {
+                0% {
+                    transform: scale(0);
+                    left: 100%;
+                }
+                50% {
+                    transform: scale(1);
+                    left: 50%;
+                }
+                100% {
+                    transform: scale(1);
+                    left: 50%;
+                }
+            }
+        }
+    
+        img {
+            width: 500px;
+            height: 1000px;
+            animation: menujump 0.7s forwards 6s,  menujump 0.7s forwards 8.6s,  menujump 0.7s forwards 10.8s;
+            @keyframes menujump {
+                0% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                20% {
+                    transform: scale(1.2);
+                    opacity: 0.7;
+                }
+                40% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+               
+                100% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            } 
+
+        }
+     }
+    
+
+  
+        
+   
+
+    .left-item {
+        position: absolute;
+        top: 18%;
+        left: 30%;
+        opacity: 0;
+        z-index: 1;
+        animation: bigBang 0.5s forwards 3.6s;
+        &.display{
+            display: none;
+        }
+        
+        
+       
+    
+        @keyframes bigBang {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+                left: 30%; 
+            }
+            100% {
+                transform: scale(1); 
+                opacity: 1;
+                left: 0%;
+            }
+        }
+
+        .left-text {
+            width: 189px;
+            height: 206px;
+            background-image: url('img/bigbang.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 1;
+            margin-left: 7px;
+            margin-bottom: -40px;
+            animation: bigBangjumps 0.2s forwards 6s , bigBangjumps 0.2s forwards 8.6s;
+        
+            @keyframes bigBangjumps {
+                0% {
+                    transform: scale(1);
+                }
+                20% {
+                    transform: scale(1.2);
+                }
+                40% {
+                    transform: scale(1);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+        }
+        
+
+        .price {
+            z-index: 10;
+            padding-left: 15px;
+            position: absolute;
+
+            img {
+                width: 189px;
+                height: 93px;
+            }
+        }
+    }
+}
+
+
+
+.stripe {
+    position: absolute;
+    right: 0%;
+    top: 25%;
+    z-index: 1;
+    opacity: 0;
+
+    &.red.first-cycle {
+        animation: stripeAnimation 0.5s forwards 0.2s, exitAnimation 0.5s forwards 4.8s;
+    }
+
+    &.blue.first-cycle {
+        animation: stripeAnimation 0.5s forwards 0.4s, exitAnimation 0.5s forwards 4.8s;
+    }
+
+    &.yellow.first-cycle {
+        animation: stripeAnimation 0.5s forwards 0.6s, exitAnimation 0.5s forwards 4.8s;
+    }
+
+    &.green.first-cycle {
+        animation: stripeAnimation 0.5s forwards 0.8s, exitAnimation 0.5s forwards 4.8s;
+    }
+
+    &.red.second-cycle {
+        animation: stripeAnimation 0.5s forwards 6s, exitAnimation 0.5s forwards 8s; 
+    }
+    
+    &.blue.second-cycle {
+        animation: stripeAnimation 0.5s forwards 6.2s, exitAnimation 0.5s forwards 8s;
+    }
+    
+    &.yellow.second-cycle {
+        animation: stripeAnimation 0.5s forwards 6.4s, exitAnimation 0.5s forwards 8s;
+    }
+    
+    &.green.second-cycle {
+        animation: stripeAnimation 0.5s forwards 6.6s, exitAnimation 0.5s forwards 8s;
+    }
+    
+
+    &.red.third-cycle {
+        animation: stripeAnimation 0.5s forwards 8s, exitAnimation 0.5s forwards 9.6s; 
+    }
+
+    &.blue.third-cycle {
+        animation: stripeAnimation 0.5s forwards 8.2s, exitAnimation 0.5s forwards 9.6s;
+    }
+
+    &.yellow.third-cycle {
+        animation: stripeAnimation 0.5s forwards 8.4s, exitAnimation 0.5s forwards 9.6s;
+    }
+
+    &.green.third-cycle {
+        animation: stripeAnimation 0.5s forwards 8.6s, exitAnimation 0.5s forwards 9.6s;
+    }
+
+    @keyframes stripeAnimation {
+        0% {
+            right: 10%;
+            opacity: 0;
+        }
+        40% {
+            right: 0;
+            opacity: 0.5;
+        }
+        100% {
+            right: 0;
+            opacity: 1;
+        }
+    }
+
+    @keyframes exitAnimation {
+        0% {
+            right: 0%;
+            opacity: 1;
+            display: flex;
+        }
+        100% {
+            right: -70%;
+            opacity: 0;
+            display: none;
+        }
+    }
+}
+
+
+
+
+
+.menu-title {
+    position: absolute;
+    bottom: 24%;
+    opacity: 0;
+    left: 27%;
+    animation: titleAnimation 0.5s forwards 3s, 
+    titleAnimation 2s forwards 6s,  
+    titleAnimation 2s forwards 8.6s;
+
+    &.end-btn {
+        top: 7%;
+        left: 100%;
+        animation: endbtnFadeIn 0.5s forwards 0.5s,
+        clickAnimation 0.5s forwards 1s, 
+        clickAnimation 0.5s forwards 1.5s;
+
+        @keyframes endbtnFadeIn {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                left: 0%; 
+                opacity: 1;
+            }
+        }
+        @keyframes clickAnimation {
+            0% {
+                transform: scale(1);
+            }
+            20% {
+                transform: scale(1.02);
+            }
+            50% {
+                transform: scale(0.98);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+ }
+ @keyframes titleAnimation {
+    0% {
+        bottom: 24%;
+        opacity: 0;
+        display: none;
+    }
+     40% {
+        opacity: 0.4;
+     
+    }
+     80% {
+        opacity: 0.8;
+     
+    }
+    100% {
+        bottom: 25%;
+        opacity: 1;
+        display: block;
+      }
+  }
+}
+
+
+.footer-logo {
+    width: 100%;
+    position: absolute;
+
+    img {
+        width: 100%;
+        height: 1000px;
+    }
+  }
+}
