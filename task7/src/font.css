@@ -27,7 +27,15 @@
     .w-100{
       width: 100% !important;
     }
-    
+    .mobile-top{
+      padding-top: 100px;
+    }
+    .mobile-top-200{
+      padding-top: 200px !important;
+    }
+    .mobile-mt{
+      margin-top: 100px !important;
+    }
 
 }
 
