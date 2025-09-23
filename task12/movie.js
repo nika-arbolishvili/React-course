@@ -1,5 +1,4 @@
 // მთავარი ფილმების დატა
-
 const API_URL =
   "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1";
 // ფოტოების გამოსატანი ინფორმაცია
@@ -45,11 +44,7 @@ function showMovies(movies) {
         </div>
       </div>
     `;
-
-    movieEl.addEventListener("click", () => {
-      showPopup(title, overview, IMG_PATH + backdrop_path);
-      console.log('work');
-    });
+    showPopup(title, overview, IMG_PATH + backdrop_path, vote_average, movieEl);
 
     main.appendChild(movieEl);
   });
@@ -80,30 +75,28 @@ form.addEventListener("submit", (e) => {
 });
 
 // TODO : როდესაც დააჭრთ ერთ ფილმს უნდა გახსნათ პოპ აპში ამ ფილმის ინფორამცია
- 
-
-function showPopup(title, overview, image, vote) {
-  const popup = document.createElement('div');
-  popup.classList.add('popup');
-
-  popup.innerHTML = `
-    <div class="popup-content">
-      <button class="close-btn">&times;</button>
-      <img src="${image}" alt="${title}" />
-      <div class="movie-info">
-        <h3>${title}</h3>
-        <span class="${getClassByRate(vote)}">${vote}</span>
-        <div class="overview">
-          <h3>Overview</h3>
-          <p>${overview}</p>
+function showPopup(title, overview, image, vote, movieEl) {
+  movieEl.addEventListener("click", () => {
+    const popup = document.createElement('div');
+    popup.classList.add('popup');
+    popup.innerHTML = `
+      <div class="popup-content">
+        <button class="close-btn">&times;</button>
+        <img src="${image}" alt="${title}" ${!image ? 'style="display:none;"' : ''} />
+        <div class="movie-info">
+          <h3>${title}</h3>
+          <span class="${getClassByRate(vote)}">${vote}</span>
+          <div class="overview">
+            <h3>Overview</h3>
+            <p>${overview}</p>
+          </div>
         </div>
       </div>
-    </div>
-  `;
+    `;
 
-  document.body.appendChild(popup);
+    document.body.appendChild(popup);
 
-  const closeBtn = popup.querySelector('.close-btn');
-  closeBtn.addEventListener('click', () => popup.remove());
+    const closeBtn = popup.querySelector('.close-btn');
+    closeBtn.addEventListener('click', () => popup.remove());
+  });
 }
-
