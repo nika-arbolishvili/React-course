@@ -44,7 +44,7 @@ function showMovies(movies) {
         </div>
       </div>
     `;
-    showPopup(title, overview, IMG_PATH + backdrop_path, vote_average, movieEl);
+    showPopup(title,overview,IMG_PATH+backdrop_path,vote_average,movieEl);
 
     main.appendChild(movieEl);
   });
