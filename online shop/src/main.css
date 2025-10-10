@@ -1,0 +1,149 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.container {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  width: 100%;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  background-color: #ffffff;
+}
+
+.items {
+  width: 100%;
+  display: flex;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+}
+
+li {
+  padding: 10px;
+}
+
+a {
+  font-size: 16px;
+  color: #111111;
+  font-weight: 500;
+  font-family: "Jost";
+}
+
+.baner {
+  width: 100%;
+  overflow: hidden;
+}
+
+.baner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.products {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  font-family: "Jost";
+  font-size: 40px;
+  color: #111111;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  font-weight: 470;
+}
+
+.product-cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  flex: 1 1 350px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 606px;
+}
+
+.card img {
+  width: 100%;
+  height: 510px;
+  object-fit: cover;
+  display: block;
+}
+
+.title-price {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.title {
+  color: #555;
+  font-family: "Jost";
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.price {
+  color: #555;
+  font-family: "Jost";
+  font-size: 14px;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    flex: 1 1 300px;
+    max-width: 33.333%;
+  }
+}
+
+@media (max-width: 800px) {
+  .card {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+@media (max-width: 500px) {
+  h2{
+    font-size: 28px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  
+}
+@media (max-width: 350px) {
+  h2{
+    font-size: 24px !important;
+  }
+}
