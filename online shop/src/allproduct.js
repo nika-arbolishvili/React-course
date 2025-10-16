@@ -1,20 +1,19 @@
 // Create API URL for fetching bestsellers
 const baseurl = "https://www.aloyoga.com";
-const bestsellerurl = "/collections/bestsellers/products.json";
-const limit = "?limit=12";
-const bestfullurl = baseurl + bestsellerurl + limit;
+const limit = "?limit=24";
+const allproductsurl = "/collections/womens-shop-all/products.json";
+const fullurl = baseurl + allproductsurl + limit;
 
 // Fetch JSON data and call the generationProducts function
 async function getProducts(generationProducts) {
-  const res = await fetch(bestfullurl);
+  const res = await fetch(fullurl);
   const data = await res.json();
   generationProducts(data.products);
 }
-
 // Generate product cards and append to the container
+
 function generationProducts(products) {
   const container = document.querySelector(".product-cards");
-
   products.forEach((item) => {
     let image = item.images?.[0]?.src;
     let title = item.title;
@@ -31,7 +30,6 @@ function generationProducts(products) {
         <span class="price">$${price}</span>
       </div>
     `;
-
     container.appendChild(card);
 
     // Add click event to navigate to the detail page with handle
@@ -42,7 +40,7 @@ function generationProducts(products) {
 // Set product handle as URL parameter for detail page navigation
 function getproductid(card, handle) {
   card.addEventListener("click", () => {
-    window.location.href = `src/details.html?handle=${handle}`;
+    window.location.href = `details.html?handle=${handle}`;
   });
 }
 

@@ -3,17 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>store</title>
+    <title>Document</title>
+    <script src="details.js"></script>
     <link rel="stylesheet" href="main.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <script src="./allproduct.js"></script>
-     <script src="details.js"></script>
-
+    <link rel="stylesheet" href="details.css" />
   </head>
   <body>
     <header>
@@ -35,17 +28,32 @@
           <nav>
             <ul>
               <li><a href="../index.html">home</a></li>
-              <li><a href="">products</a></li>
+              <li><a href="allproduct.html">products</a></li>
             </ul>
           </nav>
         </div>
       </div>
     </header>
-    <div class="container">
-      <section class="products">
-        <h2>ALL PRODUCTS</h2>
-        <div class="product-cards"></div>
-      </section>
-    </div>
+    <section class="details">
+      <div class="container">
+        <div class="items">
+          <div class="images">
+            <img class="main-img" src="" alt="" />
+          </div>
+          <div class="colum">
+            <div class="details-info">
+              <div class="sizes"></div>
+            </div>
+            <div class="btn-container">
+              <button class="add">Add to Bag</button>
+              <button class="wish-btn">Add to Wishlist</button>
+            </div>
+            <div class="description">
+              <h3 class="desc-title">Deskription</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
