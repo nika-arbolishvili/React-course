@@ -32,7 +32,7 @@ function generationProducts(products) {
     `;
     container.appendChild(card);
 
-    // Add click event to navigate to the detail page with handle
+    // Add get fir details products handle
     getproductid(card, handle);
   });
 }

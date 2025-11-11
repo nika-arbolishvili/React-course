@@ -44,7 +44,28 @@ function getproductid(card, handle) {
   card.addEventListener("click", () => {
     window.location.href = `src/details.html?handle=${handle}`;
   });
+  
 }
 
 // Initialize fetching products
 getProducts(generationProducts);
+
+
+
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout 1");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("Promise 1");
+});
+
+console.log("End")
+
+
+let arr = [1,2,3,4]
+let max = Math.max(...arr[]);
+
+console.log()
